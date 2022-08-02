@@ -30,3 +30,5 @@ services:
 volumes:
   kafka-data:
 ```
+
+The UI can be accessed in `http://localhost:9091`

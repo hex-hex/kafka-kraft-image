@@ -6,12 +6,14 @@ services:
       - 9092:9092
     volumes:
       - kafka-data:/tmp
-  redpanda:
-    image: docker.redpanda.com/vectorized/console:master-173596f
+  kafdrop:
+    image: obsidiandynamics/kafdrop
     ports:
-      - 9090:8080
+      - 9091:9000
     environment:
-      KAFKA_BROKERS: kafka:9092
+      KAFKA_BROKERCONNECT: kafka:9092
+      JVM_OPTS: -Xms32M -Xmx64M 
+      SERVER_SERVLET_CONTEXTPATH: /
 
 
 volumes:

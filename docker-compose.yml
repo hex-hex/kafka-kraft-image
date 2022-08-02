@@ -1,6 +1,10 @@
 version: "3"
 services:
   kafka:
+    ports:
+      - published: 9092
+        target: 9092
+        mode: host
     image: hexhex/kafka-kraft:0.0.3
     volumes:
       - ./kafka-data:/tmp

@@ -10,10 +10,8 @@ tar zxvf kafka_${scalaversion}-${kafkaversion}.tgz && \
 rm kafka_${scalaversion}-${kafkaversion}.tgz && \
 mv kafka_${scalaversion}-${kafkaversion} home/kafka
 
-WORKDIR /home/kafka
-
-RUN bin/kafka-storage.sh format -t $(bin/kafka-storage.sh random-uuid) -c config/kraft/server.properties
+COPY start.py /home/start.py
 
 EXPOSE 9092 9093
 
-CMD ["bin/kafka-server-start.sh", "config/kraft/server.properties"]
+CMD ["python", "/home/start.py"]

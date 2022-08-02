@@ -4,7 +4,7 @@ ARG kafkaversion=3.2.0
 ARG scalaversion=2.13
 
 RUN pacman -Syu --noconfirm && \
-pacman -S wget jre-openjdk --noconfirm && \
+pacman -S wget jre-openjdk python --noconfirm && \
 wget https://dlcdn.apache.org/kafka/${kafkaversion}/kafka_${scalaversion}-${kafkaversion}.tgz && \
 tar zxvf kafka_${scalaversion}-${kafkaversion}.tgz && \
 rm kafka_${scalaversion}-${kafkaversion}.tgz && \

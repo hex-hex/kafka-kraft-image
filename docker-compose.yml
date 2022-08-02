@@ -5,10 +5,14 @@ services:
     ports:
       - 9092:9092
     volumes:
-      - ./kafka-data:/tmp
+      - kafka-data:/tmp
   redpanda:
     image: docker.redpanda.com/vectorized/console:master-173596f
     ports:
       - 9090:8080
     environment:
       KAFKA_BROKERS: kafka:9092
+
+
+volumes:
+  kafka-data:

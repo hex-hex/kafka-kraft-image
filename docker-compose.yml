@@ -1,8 +1,14 @@
 version: "3"
 services:
   kafka:
+    image: hexhex/kafka-kraft:0.0.3
     ports:
       - 9092:9092
-    image: hexhex/kafka-kraft:0.0.3
     volumes:
       - ./kafka-data:/tmp
+  redpanda:
+    image: docker.redpanda.com/vectorized/console:master-173596f
+    ports:
+      - 9090:8080
+    environment:
+      KAFKA_BROKERS: kafka:9092

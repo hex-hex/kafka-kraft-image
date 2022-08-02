@@ -1,8 +1,3 @@
-.vscode
-version: "3"
-services:
-  kafka:
-    image: hexhex/kafka-kraft:0.0.3
-    volumes:
-      - ./kafka-data:/tmpkafka-data
 kafka
+kafka-data
+.vscode

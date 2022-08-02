@@ -10,6 +10,7 @@ tar zxvf kafka_${scalaversion}-${kafkaversion}.tgz && \
 rm kafka_${scalaversion}-${kafkaversion}.tgz && \
 mv kafka_${scalaversion}-${kafkaversion} home/kafka
 
+COPY config/kraft/server.properties /home/kafka/config/kraft/server.properties
 COPY start.py /home/start.py
 
 EXPOSE 9092 9093

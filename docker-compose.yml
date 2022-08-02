@@ -1,6 +1,6 @@
 version: "3"
 services:
   kafka:
-    image: hexhex/kafka-kraft:0.0.2
-    # volumes:
-    #   - ./kafka-data:/tmp
+    image: hexhex/kafka-kraft:0.0.3
+    volumes:
+      - ./kafka-data:/tmp

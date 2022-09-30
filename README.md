@@ -12,7 +12,9 @@ You can deploy a local stack with `docker-compose.yml` like:
 version: "3"
 services:
   kafka:
-    image: hexhex/kafka-kraft:0.0.7
+    image: hexhex/kafka-kraft:0.0.10
+    environment:
+      ADVERTISED_LISTENERS: kafka:9092
     ports:
       - 9092:9092
     volumes:

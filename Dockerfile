@@ -1,6 +1,6 @@
 FROM archlinux:latest
 
-ARG kafkaversion=3.2.3
+ARG kafkaversion=3.4.0
 ARG scalaversion=2.13
 
 RUN pacman -Syu --noconfirm && \
